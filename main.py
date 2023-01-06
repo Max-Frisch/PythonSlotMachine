@@ -8,17 +8,19 @@ ROWS = 3
 COLS = 3
 
 symbol_count = {
-    "A": 2,
-    "B": 4,
-    "C": 6,
-    "D": 8
+    "777": 1,
+    " A ": 2,
+    " B ": 4,
+    " C ": 6,
+    " D ": 8
 }
 
 symbol_value = {
-    "A": 5,
-    "B": 4,
-    "C": 3,
-    "D": 2
+    "777": 10,
+    " A ": 5,
+    " B ": 4,
+    " C ": 3,
+    " D ": 2
 }
 
 
@@ -133,13 +135,14 @@ def spin(balance):
     print_slot_machine(slots)
     winnings, winning_lines = check_winnings(slots, lines, bet, symbol_value)
     print(f"You won on line(s):", *winning_lines)
+    print(f"You won a total of ${winnings} this round.")
     return winnings - total_bet
 
 
 def main():
     balance = deposit()
     while True:
-        print(f"Current balance is ${balance}")
+        print(f"Current balance is ${balance} now.")
         answer = input("Press enter to play (q to quit).")
         if answer == "q":
             break
